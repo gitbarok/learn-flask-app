@@ -1,0 +1,22 @@
+{
+    "1": {
+        "Nama": "John Doe",
+        "NIP": "1234",
+        "Status": "Available"
+    },
+    "2": {
+        "Nama": "John Doe",
+        "NIP": "1",
+        "Status": "Available"
+    },
+    "3": {
+        "Nama": "John Doe",
+        "NIP": "2",
+        "Status": "Not Available"
+    },
+    "4": {
+        "Nama": "askjdajshdjhadksj",
+        "NIP": "1287398127938712",
+        "Status": "Available"
+    }
+}
