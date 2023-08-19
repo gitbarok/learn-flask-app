@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <div class="hero-cta">
+        <a class="ctas-login-dosen" href="{{ url_for('add_user')}}">Add New User</a>
+    </div>
+    <table class="my_table">
+        <tr>
+            <th>Nama</th>
+            <th>NIP</th>
+            <th>Status</th>
+            <th>Button</th>
+        </tr>
+        {%for item_id,dosen in data_dosen.items()%}
+        <tr>
+            <td>{{dosen["Nama"]}}</td>
+            <td>{{dosen["NIP"]}}</td>
+            <td>{{dosen["Status"]}}</td>
+            <td>
+                <form action="{{ url_for('delete_user', key=item_id) }}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="login-page">
+    <div class="form">
+        <form method="POST" class="login-form">
+            <div class="input">{{ form.username}}</div>
+            <div class="input">{{ form.password}}</div>
+            <button>register</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

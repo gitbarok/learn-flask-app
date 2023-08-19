@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1 class="hero-headline">Find your lecturer</h1>
+        <p class="hero-subheadline">Cari dosenmu ada di prodi untuk bimbingan dan lulus tepat waktu!</p>
+        <div class="hero-cta">
+            <a class="ctas-login-dosen" href="{{ url_for('login')}}">Login for Admin</a>
+        </div>
+    </div>
+    <div class="dosens">
+        <div class="dosen-list">
+            {% for key, dosen in data_dosen.items() %}
+            <div class="dosen">
+                <div class="dosen-header">
+                    <img src="" alt="">
+                    <div class="dosen-meta">
+                        <h3 class="dosen-title">{{dosen["Nama"]}}</h3>
+                        <p class="dosen-nip">{{dosen["NIP"]}}</p>
+                    </div>
+                    <hr class="divider">
+                    {% if dosen["Status"] == "Available"%}
+                    {%set status = 'availibility'%}
+                    {% else %}
+                    {%set status = 'not'%}
+                    {% endif %}
+                    <span class="dosen-{{ status }}">{{dosen["Status"]}}</span>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
